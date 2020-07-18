@@ -27,8 +27,10 @@ module.exports = {
             const createdTimeClient = await TimeClient.create({
                 time: time_id,
                 client: client_id
-            })            
+            })          
+
             await createdTimeClient.populate('client').execPopulate()            
+            
             return res.status(200).send(createdTimeClient)
         }catch(err){
             returnError(res, err)

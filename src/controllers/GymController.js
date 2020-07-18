@@ -13,6 +13,7 @@ module.exports = {
             return res.status(400).send(err)
         }
     },
+    
     async showAll(req,res) {
         try {
             const allGyms = await Gym.find()

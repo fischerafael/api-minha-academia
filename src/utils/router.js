@@ -5,13 +5,14 @@ const ClientController = require('../controllers/ClientController')
 const DayController = require('../controllers/DayController')
 const TimeDayController = require('../controllers/TimeDayController')
 const TimeClientController = require('../controllers/TimeClientController')
+const SessionController = require('../controllers/SessionController')
 
 const router = Router()
 
 router.post('/', GymController.create)
 router.get('/', GymController.showAll)
 
-
+router.post('/login', SessionController.createSession)
 
 router.post('/client/:gym_id', ClientController.create)
 router.get('/client/:gym_id', ClientController.showAll)
